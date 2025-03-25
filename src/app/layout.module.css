@@ -1,0 +1,6 @@
+.headerWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* NavbarとSpaceHeaderの間隔 */
+    padding: 16px 0;
+  }

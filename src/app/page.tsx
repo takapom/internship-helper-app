@@ -48,7 +48,7 @@ export default function HomePage() {
   return (
     <main>
       <div className={styles.container_first}>
-        <h1 className={styles.text_head}>📧 Gmail 就活・インターン情報取得ページ</h1>
+        <h1 className={styles.text_head}>📧 Gmail 就活・インターン情報取得</h1>
         <button onClick={handleLogin} className={styles.button}>
           Googleでログインしてメール取得
         </button>

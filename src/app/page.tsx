@@ -6,6 +6,9 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 import { fetchRecentEmails } from "@/lib/gmail"
 import Link from "next/link"
 import styles from "./page.module.css"
+import SpaceHeader from "@/components/SpaceHeader"
+import Stack from "@/components/Stack"
+import { classifyEmail } from "@/lib/gemin"
 
 export default function HomePage() {
   const [emails, setEmails] = useState<any[]>([])
@@ -13,27 +16,42 @@ export default function HomePage() {
 
   const handleLogin = async () => {
     try {
-      setLoading(true)
-      const provider = new GoogleAuthProvider()
-      provider.addScope("https://www.googleapis.com/auth/gmail.readonly")
-
-      const result = await signInWithPopup(auth, provider)
-      const credential = GoogleAuthProvider.credentialFromResult(result)
-      const token = credential?.accessToken
-
-      console.log("アクセストークン:", token)
-
+      setLoading(true);
+      const provider = new GoogleAuthProvider();
+      provider.addScope("https://www.googleapis.com/auth/gmail.readonly");
+  
+      const result = await signInWithPopup(auth, provider);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential?.accessToken;
+  
+      console.log("アクセストークン:", token);
+  
       if (token) {
-        const emailData = await fetchRecentEmails(token)
-        setEmails(emailData)
+        const emailData = await fetchRecentEmails(token);
+  
+        const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
+        const classifiedEmails = [];
+
+        for (const email of emailData) {
+          // 500文字以下だけ分類
+          if (email.body.length < 500) {
+            const category = await classifyEmail(email.body);
+            classifiedEmails.push({ ...email, category });
+            await sleep(2000);
+          } else {
+            classifiedEmails.push({ ...email, category: "スキップ（長すぎ）" });
+          }
+        }
+  
+        setEmails(classifiedEmails);
       }
     } catch (err) {
-      console.error("ログインまたはメール取得エラー:", err)
+      console.error("ログインまたはメール取得エラー:", err);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
-
+  };
+  
   // メールの種類を判定する関数（オプション）
   const getEmailType = (subject: string) => {
     const lowerSubject = subject.toLowerCase()
@@ -47,6 +65,7 @@ export default function HomePage() {
 
   return (
     <main>
+      <SpaceHeader />
       <div className={styles.container_first}>
         <h1 className={styles.text_head}>📧 Gmail 就活・インターン情報取得</h1>
         <button onClick={handleLogin} className={styles.button}>
@@ -73,6 +92,13 @@ export default function HomePage() {
           )
         })}
       </ul>
+      <footer>
+        <div className={styles.footeromp}>
+        <Stack />
+        </div>
+      </footer>
     </main>
   )
 }
+
+

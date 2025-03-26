@@ -84,7 +84,7 @@ export default function Navbar() {
             </li>
             <li className={styles.navItem}>
               <Link href="/" className={styles.navLink}>
-                Contact
+                Programing
               </Link>
             </li>
           </ul>

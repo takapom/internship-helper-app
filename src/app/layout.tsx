@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import SpaceHeader from "@/components/SpaceHeader";
 import styles from "./layout.module.css"
 
 export const metadata = {
@@ -12,8 +11,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header className={styles.headerWrapper}>
           <Navbar />
-          <SpaceHeader />
         </header>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
         {children}
         </body>
     </html>

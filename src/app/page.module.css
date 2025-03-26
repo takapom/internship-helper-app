@@ -166,3 +166,12 @@
   color: #ea4335;
 }
 
+.footeromp {
+  display: flex;
+  justify-content: center; /* 横方向の中央揃え */
+  align-items: center;     /* 縦方向の中央揃え */
+  height: 100px;           /* 縦方向の中央揃えを効かせるには高さが必要 */
+  background-color: white; /* お好みで暗め背景など */
+  margin-top: 100px;
+  margin-bottom: 70px;
+}

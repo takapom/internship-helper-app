@@ -4,6 +4,7 @@ import GlassCard from "@/components/GlassCard"
 import styles from "./page.module.css"
 import { useState, useRef, useEffect} from "react";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from "@mui/material";
+import LeftPositionedTimeline from "@/components/Timeline";
 
 export default function Manegement(){
     const[open, setOpen] = useState<boolean>(false);
@@ -27,14 +28,17 @@ export default function Manegement(){
     }
     return(
         <div>
+            <div className={styles.container}>
             <h1 className={styles.text}>これは就活・インターンのタスク管理ページです</h1>
             <GlassCard title="サイバーエージェント" description="インターン" data="2020-02-03" memo="コーディングテスト"/>
             <GlassCard title="任天堂" description="任天堂" data="2020-02-02" memo="志望動機作成"/>
             <GlassCard />
             <GlassCard />
+            <LeftPositionedTimeline />
             <Button variant="outlined" onClick={handleOpen}>
         ポップアップを開く
       </Button>
+      </div>
 
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>新しいタスクを追加</DialogTitle>
@@ -66,10 +70,6 @@ export default function Manegement(){
           <Button onClick={() => alert("保存しました！")}>保存</Button>
         </DialogActions>
       </Dialog>
-
-
- 
-
         </div>
     )
 }

@@ -2,6 +2,31 @@
     text-align: center;
 }
 
+.container {
+  padding: 24px;
+}
+
+.text {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.mainContent {
+  display: flex;
+  gap: 32px; /* カードとタイムラインの間の余白 */
+  align-items: flex-start; /* 上揃えにする */
+}
+
+.cardSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timelineSection {
+  min-width: 300px; /* タイムラインの幅を確保 */
+}
+
 .fixedIcon {
     position: fixed;
     bottom: 20px;
@@ -19,5 +44,5 @@
       right: 15px;
     }
   }
-  
+
   

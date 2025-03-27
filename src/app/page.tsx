@@ -10,6 +10,7 @@ import SpaceHeader from "@/components/SpaceHeader"
 import Stack from "@/components/Stack"
 import { classifyEmail } from "@/lib/gemin"
 
+
 export default function HomePage() {
   const [emails, setEmails] = useState<any[]>([])
   const [loading, setLoading] = useState(false)

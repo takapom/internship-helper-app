@@ -68,13 +68,13 @@ export default function Navbar() {
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="/" className={styles.navLink}>
-                Intern
+              <Link href="/manegement" className={styles.navLink}>
+                management schdule
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="/" className={styles.navLink}>
-              Job hunting
+              <Link href="/List" className={styles.navLink}>
+              List
               </Link>
             </li>
             <li className={styles.navItem}>

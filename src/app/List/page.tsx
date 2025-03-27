@@ -1,3 +1,5 @@
+"use client"
+
 import GlassCard from "@/components/GlassCard";
 import styles from "./page.module.css"
 
@@ -12,12 +14,12 @@ export default function List (){
             <GlassCard title="ガラスカード" description="インフラエンジニアの会社" />
             <GlassCard title="ガラスカード" description="インフラエンジニアの会社" />
             <GlassCard title="ガラスカード" description="インフラエンジニアの会社" />
-            {/* <input 
+            <input 
             type="image"
              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAkwSXAiHBdlAPIgs1RJsbWdAIcinLhiex4Q&s"
              className={styles.fixedIcon}
              onClick={handleList}
-             /> */}
+             />
         </div>
     )
 }

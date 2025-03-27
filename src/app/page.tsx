@@ -13,6 +13,7 @@ import { classifyEmail } from "@/lib/gemin"
 export default function HomePage() {
   const [emails, setEmails] = useState<any[]>([])
   const [loading, setLoading] = useState(false)
+  const [icon, setIcon] = useState<string | null>(null);
 
   const handleLogin = async () => {
     try {
@@ -23,8 +24,11 @@ export default function HomePage() {
       const result = await signInWithPopup(auth, provider);
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential?.accessToken;
-  
+
+      const user = result.user;
+      setIcon(user.photoURL || null); // photoURLを保存
       console.log("アクセストークン:", token);
+
   
       if (token) {
         const emailData = await fetchRecentEmails(token);
@@ -71,6 +75,17 @@ export default function HomePage() {
         <button onClick={handleLogin} className={styles.button}>
           Googleでログインしてメール取得
         </button>
+        {icon && (
+      <div className={styles.iconWrapper}>
+        <label htmlFor="icon" className={styles.login_text}>ログイン中のアカウント：</label>
+      <img
+        id="i"
+        src={icon}
+        alt="ユーザーアイコン"
+        style={{ width: 48, height: 48, borderRadius: "50%", marginTop: "1rem" }}
+      />
+  </div>
+)}
       </div>
 
       {loading && <p>読み込み中...</p>}

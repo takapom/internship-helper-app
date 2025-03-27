@@ -175,3 +175,23 @@
   margin-top: 100px;
   margin-bottom: 70px;
 }
+
+.login_text{
+  margin-top: 1.2rem;
+  font-weight: bold;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center; /* 縦の中央揃え */
+  justify-content: center;
+  gap: 12px; /* ラベルと画像の間の余白 */
+  margin-top: 1rem;
+}
+
+
+.iconImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}

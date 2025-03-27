@@ -1,5 +1,8 @@
 // components/GlassCard.tsx
+"use client"
 import styles from './GlassCard.module.css';
+
+
 
 type Props = {
   title: string;
@@ -20,3 +23,4 @@ export default function GlassCard({ title, description, data, memo }: Props) {
     </div>
   );
 }
+

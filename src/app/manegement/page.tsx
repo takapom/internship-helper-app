@@ -32,8 +32,8 @@ export default function Manegement(){
             <h1 className={styles.text}>これは就活・インターンのタスク管理ページです</h1>
             <GlassCard title="サイバーエージェント" description="インターン" data="2020-02-03" memo="コーディングテスト"/>
             <GlassCard title="任天堂" description="任天堂" data="2020-02-02" memo="志望動機作成"/>
-            <GlassCard />
-            <GlassCard />
+            <GlassCard title="Sky株式会社" description="就業インターン" data="2020-02-02" memo="最終面接"/>
+            <GlassCard title="サイボウズ" description="インターン" data="2020-02-02" memo="最終面接"/>
             <LeftPositionedTimeline />
             <Button variant="outlined" onClick={handleOpen}>
         ポップアップを開く

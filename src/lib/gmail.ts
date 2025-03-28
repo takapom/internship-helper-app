@@ -50,7 +50,7 @@
 
 export const fetchRecentEmails = async (accessToken: string) => {
   const listRes = await fetch(
-    'https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=5',
+    'https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10',
     {
       headers: {
         Authorization: `Bearer ${accessToken}`,

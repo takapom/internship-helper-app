@@ -30,8 +30,7 @@ export default function Navbar() {
       </svg>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/">
-            <div className={styles.logoContainer}>
+        <Link href="/"  className={styles.logoContainer}>
               <span className={styles.logoIcon}>
                 <svg viewBox="0 0 24 24" fill="none" className={styles.logoSvg}>
                   <path
@@ -48,7 +47,6 @@ export default function Navbar() {
                 <span className={styles.logoTextPrimary}>Shu</span>
                 <span className={styles.logoTextSecondary}>Mail</span>
               </span>
-            </div>
           </Link>
         </div>
 
@@ -78,7 +76,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="/" className={styles.navLink}>
+              <Link href="/programing" className={styles.navLink}>
                 Learn
               </Link>
             </li>

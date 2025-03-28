@@ -6,22 +6,51 @@ import { useState, useRef, useEffect} from "react";
 import { Button } from "@mui/material";
 import LeftPositionedTimeline from "@/components/Timeline";
 import Link from "next/link";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+
+type Post = {
+    id: string;
+    data: number | string
+    name: string;
+    content:string;
+    memo: string;
+}
 
 export default function Manegement(){
     const[open, setOpen] = useState<boolean>(false);
+    const [postList, setPostList] = useState<Post[]>([]);
     const inputRef = useRef<HTMLInputElement>(null)
+
+    useEffect(() => {
+        const getPosts = async() => {
+            const data = await getDocs(collection(db, "posts"))
+            const posts = data.docs.map((doc) => ({
+                id: doc.id,
+                ...(doc.data() as Omit<Post, "id">),
+              }));
+              setPostList(posts);
+        };
+        getPosts();
+    },[])
+
 
     // モーダルが開いたら入力欄にフォーカスを当てる
     return(
         <div>
             <div className={styles.container}>
             <h1 className={styles.text}>これは就活・インターンのタスク管理ページです</h1>
-            <GlassCard title="サイバーエージェント" description="インターン" data="2020-02-03" memo="コーディングテスト"/>
-            <GlassCard title="任天堂" description="任天堂" data="2020-02-02" memo="志望動機作成"/>
-            <GlassCard title="Sky株式会社" description="就業インターン" data="2020-02-02" memo="最終面接"/>
-            <GlassCard title="サイボウズ" description="インターン" data="2020-02-02" memo="最終面接"/>
+            {postList.map((post) => (
+                <GlassCard
+                key={post.id}
+                title={post.name}
+                description={post.content}
+                data={post.data} // 日付情報がないので仮置き
+                memo={post.memo}
+            />
+            ))}
             <LeftPositionedTimeline />
-            <Link href="/addlist">
+            <Link href="/addmanegement">
             <Button className={styles.ListButton}>
             リストを追加する
             </Button>

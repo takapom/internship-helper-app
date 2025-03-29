@@ -1,6 +1,6 @@
 import GlassCard2 from "@/components/GlassCard2"
 import styles from "./page.module.css"
-
+import Link from "next/link"
 
 export default function List (){
 
@@ -11,6 +11,9 @@ export default function List (){
             <GlassCard2 />
             <GlassCard2 />
             <GlassCard2 />
+            <Link href="/addList">
+            <button>リストを追加する</button>
+            </Link>
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import SearchCardList from '@/components/SearchCardList';
 import styles from './page.module.css'
 
 interface CodeExample {
@@ -67,6 +68,7 @@ export default function Home() {
         <h1>プログラミング言語の比較</h1>
         <p>どの言語を勉強すべきか、コード例と詳細情報で比べてみよう！</p>
       </header>
+      <SearchCardList />
       <main className={styles.main}>
         {codeExamples.map((example, index) => (
           <div key={index} className={styles.languageContainer}>

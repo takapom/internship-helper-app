@@ -1,7 +1,7 @@
 export default function Stack(){
     return(
         <div>
-            <h1>強力な言語によって開発しました！</h1>
+            <h1>このシステムの技術スタック</h1>
       <div style={{ fontSize: '30px', display: 'flex', gap: '20px', alignItems: 'center' }}>
         {/* Next.js */}
         <i className="devicon-nextjs-original" title="Next.js" />

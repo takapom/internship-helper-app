@@ -14,6 +14,7 @@
     "@mui/lab": "^7.0.0-beta.9",
     "@mui/material": "^7.0.0",
     "@mui/x-data-grid": "^7.28.1",
+    "bootstrap": "^5.3.3",
     "firebase": "^11.5.0",
     "googleapis": "^148.0.0",
     "lucide-react": "^0.483.0",

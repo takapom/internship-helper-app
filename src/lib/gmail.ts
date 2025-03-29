@@ -94,7 +94,7 @@ export const fetchRecentEmails = async (accessToken: string) => {
     });
 
     // 1通ごとに200ms待つ（リクエスト分散のため）
-    await new Promise((resolve) => setTimeout(resolve, 200));
+    await new Promise((resolve) => setTimeout(resolve, 100));
   }
 
   return emails;

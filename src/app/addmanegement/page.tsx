@@ -20,7 +20,7 @@ export default function AddList(){
             content: content,
             memo: memo,
         })
-        window.alert("リストに追加しました！")
+        window.alert("スケジュール追加しました！")
         setData("")
         setName("");
         setContent("");

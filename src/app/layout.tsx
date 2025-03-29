@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import styles from "./layout.module.css"
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export const metadata = {
   title: '就活・インターン支援サイト',

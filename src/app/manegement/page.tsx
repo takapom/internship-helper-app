@@ -18,7 +18,6 @@ type Post = {
 }
 
 export default function Manegement(){
-    const[open, setOpen] = useState<boolean>(false);
     const [postList, setPostList] = useState<Post[]>([]);
     const inputRef = useRef<HTMLInputElement>(null)
 

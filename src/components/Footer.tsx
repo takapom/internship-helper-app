@@ -1,7 +1,5 @@
 // components/Footer.tsx
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 export default function Footer() {
     return (
       <div className="container">

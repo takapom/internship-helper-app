@@ -11,7 +11,7 @@ import { db } from "@/lib/firebase";
 
 type Post = {
     id: string;
-    data: number | string
+    data: number | string;
     name: string;
     content:string;
     memo: string;
@@ -46,6 +46,7 @@ export default function Manegement(){
                 description={post.content}
                 data={post.data} // 日付情報がないので仮置き
                 memo={post.memo}
+                id={post.id}
             />
             ))}
             <LeftPositionedTimeline />

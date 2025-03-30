@@ -26,36 +26,49 @@ export default function AddPage(){
         setMemo("")
     }
     return(
-    <div>
-    <input
-      type="text"
-      className={styles.input}
-      placeholder="企業名"
-      onChange={(e) => setCompany(e.target.value)}
-    />
-        <input
-      type="text"
-      className={styles.input}
-      placeholder="選考状況"
-      onChange={(e) => setState(e.target.value)}
-    />
-        <input
-      type="text"
-      className={styles.input}
-      placeholder="期限"
-      onChange={(e) => setDeadline(e.target.value)}
-    />
-            <input
-      type="text"
-      className={styles.input}
-      placeholder="メモ"
-      onChange={(e) => setMemo(e.target.value)}
-    />
-    <button
-    onClick={createPost}
-    >
-    確定
-    </button>
-    </div>
+      <div>
+            <div>
+                <h1 className={styles.list_text}>リストを作成する</h1>
+                <div className={styles.input_container}>
+                <div className={styles.custom_input}>
+                <input
+                    value={company}
+                    type="text"
+                    onChange={(e) => (setCompany(e.target.value))}
+                    placeholder="企業名"
+                    className={styles.input}
+                />
+                </div>
+                <div className={styles.custom_input}>
+                <input
+                    value={state}
+                    type="text"
+                    onChange={(e) => (setState(e.target.value))}
+                    placeholder="選考状況"
+                    className={styles.input}
+                />
+                </div>
+                <div className={styles.custom_input}>
+                <input
+                    value={deadline}
+                    type="text"
+                    onChange={(e) => (setDeadline(e.target.value))}
+                    placeholder="締切日"
+                    className={styles.input}
+                />
+                </div>
+                <div className={styles.custom_input}>
+                <input
+                    value={memo}
+                    type="text"
+                    onChange={(e) => (setMemo(e.target.value))}
+                    placeholder="メモ"
+                    className={styles.input}
+                />
+                </div>
+                <button className={styles.whiteButton} onClick={createPost}>追加</button>
+                </div>
+            </div>
+        </div>
     )
 }

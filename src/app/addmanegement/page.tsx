@@ -31,35 +31,43 @@ export default function AddList(){
             <div>
                 <h1 className={styles.list_text}>リストを作成する</h1>
                 <div className={styles.input_container}>
-                <input 
-                value={data}
-                type="data"
-                placeholder="例：2020-01-01"
-                onChange={(e) => setData(e.target.value)}
-                className={styles.input_form}
-                />
+                <div className={styles.custom_input}>
                 <input
-                value={name}
-                 type="text" 
-                onChange={(e) => setName(e.target.value)}
-                placeholder="例：大和大学"
-                className={styles.input_form}
+                    value={data}
+                    type="text"
+                    onChange={(e) => (setData(e.target.value))}
+                    placeholder="日付"
+                    className={styles.input}
                 />
+                </div>
+                <div className={styles.custom_input}>
                 <input
-                value={content}
-                type="text" 
-                onChange={(e) => setContent(e.target.value)}
-                placeholder="例：インターン,面接etc..."
-                className={styles.input_form}
+                    value={name}
+                    type="text"
+                    onChange={(e) => (setName(e.target.value))}
+                    placeholder="企業名"
+                    className={styles.input}
                 />
-                <input 
-                value={memo}
-                type="text"
-                onChange={(e) => (setMemo(e.target.value))}
-                placeholder="メモ欄"
-                className={styles.input_form}
+                </div>
+                <div className={styles.custom_input}>
+                <input
+                    value={content}
+                    type="text"
+                    onChange={(e) => (setContent(e.target.value))}
+                    placeholder="短期or長期or就業型"
+                    className={styles.input}
                 />
-                <button onClick={createPost}>追加</button>
+                </div>
+                <div className={styles.custom_input}>
+                <input
+                    value={memo}
+                    type="text"
+                    onChange={(e) => (setMemo(e.target.value))}
+                    placeholder="メモ"
+                    className={styles.input}
+                />
+                </div>
+                <button className={styles.whiteButton} onClick={createPost}>追加</button>
                 </div>
             </div>
         </div>

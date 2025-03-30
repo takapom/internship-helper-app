@@ -1,6 +1,9 @@
-manegement schduleページの設計
-addlist/page.tsxでmanegement schduleのリストを追加する処理
-manegement/page.tsxでmanegement schduleの表示する処理
-
-
-Listページの設計
+設計の追加
+・リストカードと就活管理カードを日付順に自動で並べる
+・削除ボタンのUI修正
+・テキストのサイズ、フォント修正
+・Timelineを正しく配置する
+・追加するボタンのUI修正
+・learnに就活おすすめサイトの追記
+・
+・

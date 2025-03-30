@@ -1,4 +1,3 @@
-
 import styles from './GlassCard2.module.css';
 
 type Props = {

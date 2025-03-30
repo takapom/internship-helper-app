@@ -1,4 +1,19 @@
-import { initializeApp } from 'firebase/app';
+// import { initializeApp } from 'firebase/app';
+// import { getAuth } from 'firebase/auth';
+// import { getFirestore } from 'firebase/firestore';
+
+// const firebaseConfig = {
+//   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
+//   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN!,
+//   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!,
+//   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!,
+// };
+
+// const app = initializeApp(firebaseConfig);
+// export const auth = getAuth(app);
+// export const db = getFirestore(app);
+
+import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
@@ -9,6 +24,8 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!,
 };
 
-const app = initializeApp(firebaseConfig);
+// すでに初期化されていればそれを使う（クラッシュ防止）
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
 export const db = getFirestore(app);

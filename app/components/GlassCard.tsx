@@ -27,7 +27,12 @@ export default function GlassCard({ title, description, data, memo, id }: Props)
       <h2 className={styles.title_text}>企業名：{title}</h2>
       <p className={styles.description_text}>内容：{description}</p>
       <p>メモを追加する：{memo}</p>
-      <button onClick={handleDelete}>削除</button>
+      <button 
+      onClick={handleDelete}
+      className={styles.card_button}
+      >      
+      削除
+      </button>
     </div>
     </div>
   );

@@ -3,11 +3,11 @@
 import { useState } from "react"
 import { auth } from "@/lib/firebase"
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"
-import { fetchRecentEmails } from "@/lib/gmail"
+import { fetchRecentEmails } from "../src/lib/gmail"
 import Link from "next/link"
 import styles from "./page.module.css"
-import SpaceHeader from "@/components/SpaceHeader"
-import Stack from "@/components/Stack"
+import SpaceHeader from "./components/SpaceHeader"
+import Stack from "./components/Stack"
 import { classifyEmail } from "@/lib/gemin"
 
 

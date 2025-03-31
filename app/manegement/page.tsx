@@ -1,10 +1,10 @@
 "use client"
 
-import GlassCard from "@/components/GlassCard"
+import GlassCard from "../components/GlassCard"
 import styles from "./page.module.css"
 import { useState, useRef, useEffect} from "react";
 import { Button } from "@mui/material";
-import LeftPositionedTimeline from "@/components/Timeline";
+import LeftPositionedTimeline from "../components/Timeline";
 import Link from "next/link";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";

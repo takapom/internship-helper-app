@@ -1,4 +1,4 @@
-import SearchCardList from '@/components/SearchCardList';
+import SearchCardList from '../components/SearchCardList';
 import styles from './page.module.css'
 
 interface CodeExample {

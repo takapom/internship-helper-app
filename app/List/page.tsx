@@ -1,6 +1,6 @@
 "use client"
 
-import GlassCard2 from "@/components/GlassCard2"
+import GlassCard2 from "../components/GlassCard2"
 import styles from "./page.module.css"
 import Link from "next/link"
 import { useEffect, useState } from "react"

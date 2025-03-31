@@ -4,8 +4,10 @@ import { useState } from "react"
 import { addDoc, collection, } from "firebase/firestore";
 import {db} from "../../src/lib/firebase"
 import styles from "./page.module.css"
+import { useRouter } from "next/navigation";
 
 export default function AddList(){
+    const router = useRouter()
     const [data, setData] = useState("");
     const [name, setName] = useState("");
     const [content, setContent] = useState("");
@@ -19,6 +21,7 @@ export default function AddList(){
             memo: memo,
         })
         window.alert("スケジュール追加しました！")
+        router.push('/manegement')
         setData("")
         setName("");
         setContent("");

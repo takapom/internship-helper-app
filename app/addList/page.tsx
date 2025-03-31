@@ -4,8 +4,12 @@ import { useState } from "react";
 import styles from "./page.module.css"
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../src/lib/firebase";
+import { useRouter } from 'next/navigation';
+
+
 
 export default function AddPage(){
+    const router = useRouter();
     const [company, setCompany] = useState("");//企業名
     const [state, setState] = useState("");//選考状況
     const [deadline, setDeadline] = useState("")//期限
@@ -18,6 +22,7 @@ export default function AddPage(){
             memo: memo,
         })
         window.alert("リスト追加しました！")
+        router.push("/List")
         setCompany("")
         setState("")
         setDeadline("")

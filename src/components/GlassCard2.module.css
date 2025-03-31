@@ -42,3 +42,18 @@
       margin-bottom: 30px;
       }
     }
+
+    .button_delete{
+      background-color: #471fcac9; /* 赤っぽい削除ボタン */
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px; /* 少し大きめに */
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button_delete :hover{
+      background-color: #d9363e; /* ホバー時に少し濃く */
+    }

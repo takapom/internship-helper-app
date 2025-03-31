@@ -34,6 +34,7 @@ export default function List (){
             <h1 className={styles.text_list}>こちらのページは検討リストです！</h1>
             {postList.map((post) => (
             <GlassCard2 
+            id={post.id}
             key={post.id}
             company={post.company}
             deadline={post.deadline}

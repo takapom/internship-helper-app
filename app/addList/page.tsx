@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "./page.module.css"
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { db } from "../../src/lib/firebase";
 
 export default function AddPage(){
     const [company, setCompany] = useState("");//企業名

@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { auth } from "@/lib/firebase"
+import { auth } from "../src/lib/firebase"
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 import { fetchRecentEmails } from "../src/lib/gmail"
 import Link from "next/link"
 import styles from "./page.module.css"
-import SpaceHeader from "./components/SpaceHeader"
-import Stack from "./components/Stack"
-import { classifyEmail } from "@/lib/gemin"
+import SpaceHeader from "@/components/SpaceHeader"
+import Stack from "@/components/Stack"
+import { classifyEmail } from "../src/lib/gemin"
 
 
 export default function HomePage() {

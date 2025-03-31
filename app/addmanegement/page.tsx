@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { addDoc, collection, } from "firebase/firestore";
-import {db} from "@/lib/firebase"
+import {db} from "../../src/lib/firebase"
 import styles from "./page.module.css"
 
 export default function AddList(){

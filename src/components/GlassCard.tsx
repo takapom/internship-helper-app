@@ -1,7 +1,7 @@
 // components/GlassCard.tsx
 "use client"
 import styles from './GlassCard.module.css';
-import { db } from "@/lib/firebase"
+import { db } from "../../src/lib/firebase"
 import {doc, deleteDoc } from 'firebase/firestore';
 
 

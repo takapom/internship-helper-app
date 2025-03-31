@@ -31,7 +31,7 @@ export default function List (){
     },[]);
     return(
         <div className={styles.container}>
-            <h1 className={styles.text_list}>こちらのページは検討リストです！</h1>
+            <h1 className={styles.text_list}>企業リストです！</h1>
             {postList.map((post) => (
             <GlassCard2 
             id={post.id}

@@ -38,7 +38,7 @@ export default function Manegement(){
     return(
         <div>
             <div className={styles.container}>
-            <h1 className={styles.text}>これは就活・インターンのタスク管理ページです</h1>
+            <h1 className={styles.text}>就活・インターンのタスク管理ページです</h1>
             {postList.map((post) => (
                 <GlassCard
                 key={post.id}
@@ -51,7 +51,8 @@ export default function Manegement(){
             ))}
             <LeftPositionedTimeline />
             <Link href="/addmanegement">
-            <Button className={styles.ListButton}>
+            <Button 
+            className={styles.ListButton}>
             リストを追加する
             </Button>
             </Link>

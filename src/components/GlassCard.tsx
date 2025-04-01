@@ -10,11 +10,14 @@ type Props = {
   title: string;
   description: string;
   data: number | string;
-  memo: string | number;
   id: string;
+  event: string;
+  state: string;
+  prepare: string;
+  memo: string | number;
 };
 
-export default function GlassCard({ title, description, data, memo, id }: Props) {
+export default function GlassCard({ title, description, data, memo, id, event, state, prepare}: Props) {
   const handleDelete = async() => {
     await deleteDoc(doc(db, "posts", id));
         window.location.href = "/manegement"
@@ -24,8 +27,11 @@ export default function GlassCard({ title, description, data, memo, id }: Props)
     <div className={styles.container}>
     <div className={styles.card}>
       <p>日付：{data}</p>
-      <h2 className={styles.title_text}>企業名：{title}</h2>
+      <p className={styles.title_text}>企業名：{title}</p>
       <p className={styles.description_text}>内容：{description}</p>
+      <p>イベント名：{event}</p>
+      <p>応募状況：{state}</p>
+      <p>準備物：{prepare}</p>
       <p>メモを追加する：{memo}</p>
       <button 
       onClick={handleDelete}

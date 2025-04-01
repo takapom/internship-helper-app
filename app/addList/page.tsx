@@ -22,7 +22,7 @@ export default function AddPage(){
             memo: memo,
         })
         window.alert("リスト追加しました！")
-        router.push("/List")
+        router.push("/List") 
         setCompany("")
         setState("")
         setDeadline("")

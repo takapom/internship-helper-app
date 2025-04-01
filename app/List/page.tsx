@@ -31,7 +31,12 @@ export default function List (){
     },[]);
     return(
         <div className={styles.container}>
-            <h1 className={styles.text_list}>企業リストです！</h1>
+         <h1 className={styles.text_list}>企業リスト</h1>
+        <div className={styles.list_button_container}>
+        <Link href="/addList">
+            <button className="list_button">リストを追加する</button>
+        </Link>
+        </div>
             {postList.map((post) => (
             <GlassCard2 
             id={post.id}
@@ -42,9 +47,6 @@ export default function List (){
             state={post.state}
             />
             ))}
-            <Link href="/addList">
-            <button>リストを追加する</button>
-            </Link>
         </div>
     )
 }

@@ -8,22 +8,31 @@ import { useRouter } from "next/navigation";
 
 export default function AddList(){
     const router = useRouter()
-    const [data, setData] = useState("");
-    const [name, setName] = useState("");
-    const [content, setContent] = useState("");
-    const [memo, setMemo] = useState("");
+    const [data, setData] = useState("");//日付
+    const [name, setName] = useState("");//企業名
+    const [event, setEvent] = useState("");//イベント名                             //イベント名
+    const [state, setState] = useState("");//応募状況                                    //応募状況
+    const [prepare, setPrepare] = useState("");//準備タスク                               //準備タスク
+    const [content, setContent] = useState("");//内容
+    const [memo, setMemo] = useState("");//メモ
 
     const createPost = async () => {
         await addDoc(collection(db, "posts"), {
             data: data,
             name: name,
+            event: event,
+            state: state,
+            prepare: prepare,
             content: content,
             memo: memo,
         })
         window.alert("スケジュール追加しました！")
         router.push('/manegement')
-        setData("")
+        setData("");
         setName("");
+        setEvent("");
+        setState("");
+        setPrepare("")
         setContent("");
         setMemo("")
     }
@@ -37,7 +46,7 @@ export default function AddList(){
                     value={data}
                     type="text"
                     onChange={(e) => (setData(e.target.value))}
-                    placeholder="日付"
+                    placeholder="開催日・時間"
                     className={styles.input}
                 />
                 </div>
@@ -52,10 +61,37 @@ export default function AddList(){
                 </div>
                 <div className={styles.custom_input}>
                 <input
+                    value={event}
+                    type="text"
+                    onChange={(e) => (setEvent(e.target.value))}
+                    placeholder="イベント名"
+                    className={styles.input}
+                />
+                </div>
+                <div className={styles.custom_input}>
+                <input
+                    value={state}
+                    type="text"
+                    onChange={(e) => (setState(e.target.value))}
+                    placeholder="応募状況"
+                    className={styles.input}
+                />
+                </div>
+                <div className={styles.custom_input}>
+                <input
+                    value={prepare}
+                    type="text"
+                    onChange={(e) => (setPrepare(e.target.value))}
+                    placeholder="準備物"
+                    className={styles.input}
+                />
+                </div>
+                <div className={styles.custom_input}>
+                <input
                     value={content}
                     type="text"
                     onChange={(e) => (setContent(e.target.value))}
-                    placeholder="短期or長期or就業型"
+                    placeholder="イベント内容"
                     className={styles.input}
                 />
                 </div>

@@ -4,7 +4,6 @@ import GlassCard from "@/components/GlassCard"
 import styles from "./page.module.css"
 import { useState, useRef, useEffect} from "react";
 import { Button } from "@mui/material";
-import LeftPositionedTimeline from "@/components/Timeline";
 import Link from "next/link";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../src/lib/firebase";
@@ -13,6 +12,9 @@ type Post = {
     id: string;
     data: number | string;
     name: string;
+    event: string;
+    state: string;
+    prepare: string;
     content:string;
     memo: string;
 }
@@ -38,7 +40,15 @@ export default function Manegement(){
     return(
         <div>
             <div className={styles.container}>
-            <h1 className={styles.text}>就活・インターンのタスク管理ページです</h1>
+            <h1 className={styles.text}>イベント・インターンのタスク管理ページ</h1>
+            <div className={styles.button_container}>
+            <Link href="/addmanegement">
+            <Button 
+            className={styles.ListButton}>
+            リストを追加する
+            </Button>
+            </Link>
+        </div>
             {postList.map((post) => (
                 <GlassCard
                 key={post.id}
@@ -47,15 +57,11 @@ export default function Manegement(){
                 data={post.data} // 日付情報がないので仮置き
                 memo={post.memo}
                 id={post.id}
+                event={post.event}
+                state={post.state}
+                prepare={post.prepare}
             />
             ))}
-            <LeftPositionedTimeline />
-            <Link href="/addmanegement">
-            <Button 
-            className={styles.ListButton}>
-            リストを追加する
-            </Button>
-            </Link>
       </div>
         </div>
     )

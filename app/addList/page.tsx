@@ -11,12 +11,16 @@ import { useRouter } from 'next/navigation';
 export default function AddPage(){
     const router = useRouter();
     const [company, setCompany] = useState("");//企業名
+    const [industry, setIndustry] = useState("");//業界
+    const [level, setLevel] = useState("");//志望度
     const [state, setState] = useState("");//選考状況
     const [deadline, setDeadline] = useState("")//期限
     const [memo, setMemo] = useState("")//メモ
     const createPost = () => {
         addDoc(collection(db, "List"), {
             company: company,
+            industry: industry,
+            level: level,
             state: state,
             deadline: deadline,
             memo: memo,
@@ -24,6 +28,8 @@ export default function AddPage(){
         window.alert("リスト追加しました！")
         router.push("/List") 
         setCompany("")
+        setIndustry("")
+        setLevel("")
         setState("")
         setDeadline("")
         setMemo("")
@@ -44,6 +50,24 @@ export default function AddPage(){
                 </div>
                 <div className={styles.custom_input}>
                 <input
+                    value={industry}
+                    type="text"
+                    onChange={(e) => (setIndustry(e.target.value))}
+                    placeholder="業界"
+                    className={styles.input}
+                />
+                </div>
+                <div className={styles.custom_input}>
+                <input
+                    value={level}
+                    type="text"
+                    onChange={(e) => (setLevel(e.target.value))}
+                    placeholder="志望度"
+                    className={styles.input}
+                />
+                </div>
+                <div className={styles.custom_input}>
+                <input
                     value={state}
                     type="text"
                     onChange={(e) => (setState(e.target.value))}
@@ -56,7 +80,7 @@ export default function AddPage(){
                     value={deadline}
                     type="text"
                     onChange={(e) => (setDeadline(e.target.value))}
-                    placeholder="締切日"
+                    placeholder="エントリー締切日"
                     className={styles.input}
                 />
                 </div>

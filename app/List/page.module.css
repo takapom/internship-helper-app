@@ -7,6 +7,8 @@
   justify-content: center;
   align-items: center;
   height: 5vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .list_button{
@@ -21,10 +23,12 @@
   width: 200px;
   height: 40px;
   font-weight: bold;
+  list-style: none;
   transition: 0.3s;
   background-color: [object object];
-  background-image: radial-gradient(circle at 100% 0%, rgba(94, 138, 243, 1) 15%, rgba(243, 61, 223, 1));
+  background-image: radial-gradient(circle at 100% 0%, rgba(94, 138, 243, 1) 15%, rgb(196, 167, 192));
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .list_button:hover {
@@ -52,10 +56,4 @@ opacity: 0.9; /* 少し薄く */
     }
   }
 
-  .list_button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-  }
   

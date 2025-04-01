@@ -10,9 +10,11 @@ import { db } from "../../src/lib/firebase"
 type Post = {
     id: string;
     company: string;
+    industry: string;
+    level: string | number;
+    state: string;
     deadline: number | string;
     memo: string;
-    state: string
 }
 
 export default function List (){
@@ -34,7 +36,7 @@ export default function List (){
          <h1 className={styles.text_list}>企業リスト</h1>
         <div className={styles.list_button_container}>
         <Link href="/addList">
-            <button className="list_button">リストを追加する</button>
+            <button className={styles.list_button}>リストを追加する</button>
         </Link>
         </div>
             {postList.map((post) => (
@@ -42,9 +44,11 @@ export default function List (){
             id={post.id}
             key={post.id}
             company={post.company}
+            industry={post.industry}
+            level={post.level}
+            state={post.state}
             deadline={post.deadline}
             memo={post.memo}
-            state={post.state}
             />
             ))}
         </div>

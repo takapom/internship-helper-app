@@ -5,12 +5,14 @@ import { db } from '@/lib/firebase';
 type Props = {
   company: string;
   deadline: string | number;
+  industry: string;
+  level: string | number;
   memo : string;
   state : string;
   id: string
 }
 
-export default function GlassCard2({ company, deadline, memo, state, id}: Props) {
+export default function GlassCard2({ company, deadline, memo, state, id, industry, level}: Props) {
   const handledelete = async () => {
     await deleteDoc(doc(db, "List", id));
     window.location.href = '/List'
@@ -20,8 +22,10 @@ export default function GlassCard2({ company, deadline, memo, state, id}: Props)
     <div className={styles.container}>
     <div className={styles.card}>
       <p>企業名：{company}</p>
-      <h2 className={styles.title_text}>選考状況：{state}</h2>
-      <p className={styles.description_text}>期限：{deadline}</p>
+      <p>業界：{industry}</p>
+      <p>志望度：{level}</p>
+      <p className={styles.title_text}>選考状況：{state}</p>
+      <p className={styles.description_text}>エントリー締切日：{deadline}</p>
       <p>メモ：{memo}</p>
       <button 
       className={styles.button_delete}

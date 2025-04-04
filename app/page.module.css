@@ -34,19 +34,37 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.container_secound {
+/* .container_secound {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0;
   list-style: none;
+} */
+
+.container_secound {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
 }
 
-.listItem {
+/* .listItem {
   margin-bottom: px;
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
+} */
+
+.listItem {
+  flex: 1 1 calc(33.333% - 20px); /* 3列カードにする */
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .listItem:hover {
@@ -194,4 +212,17 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
+}
+
+.loadingLayout{
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .listItem {
+    flex: 1 1 100%;
+  }
 }

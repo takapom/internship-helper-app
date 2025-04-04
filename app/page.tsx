@@ -88,8 +88,7 @@ export default function HomePage() {
   </div>
 )}
       </div>
-
-      {loading && <p>読み込み中...</p>}
+      {loading && <p className={styles.loadingLayout}>読み込み中...</p>}
 
       <ul className={styles.container_secound}>
         {emails.map((email, index) => {
@@ -99,7 +98,7 @@ export default function HomePage() {
 
           return (
             <li className={`${styles.listItem} ${emailType ? styles[emailType] : ""}`} key={index}>
-              <Link href="/" className={styles.mail_container}>
+              <Link href="#" className={styles.mail_container}>
                 <strong>件名:</strong> {subject}
                 <br />
                 <strong>送信者:</strong> {from}

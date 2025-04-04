@@ -50,17 +50,17 @@ export default function Manegement(){
             </Link>
         </div>
             {postList.map((post) => (
-                <GlassCard
-                key={post.id}
-                title={post.name}
-                description={post.content}
-                data={post.data} // 日付情報がないので仮置き
-                memo={post.memo}
-                id={post.id}
-                event={post.event}
-                state={post.state}
-                prepare={post.prepare}
-            />
+            <GlassCard
+            key={post.id}
+            title={post.name}
+            description={post.content}
+            data={post.data} // 日付情報がないので仮置き
+            memo={post.memo}
+            id={post.id}
+            event={post.event}
+            state={post.state}
+            prepare={post.prepare}
+        />
             ))}
       </div>
         </div>

@@ -2,7 +2,8 @@
 "use client"
 import styles from './GlassCard.module.css';
 import { db } from "../../src/lib/firebase"
-import {doc, deleteDoc } from 'firebase/firestore';
+import {doc, deleteDoc, updateDoc } from 'firebase/firestore';
+import Router, { useRouter } from 'next/navigation';
 
 
 
@@ -18,10 +19,16 @@ type Props = {
 };
 
 export default function GlassCard({ title, description, data, memo, id, event, state, prepare}: Props) {
+  const router = useRouter();
   const handleDelete = async() => {
     await deleteDoc(doc(db, "posts", id));
         window.location.href = "/manegement"
         window.alert("削除しました！")
+  }
+
+  const handleEdit = async() => {
+    router.push(`/maneedit?id=${id}`);
+    
   }
   return (
     <div className={styles.container}>
@@ -39,6 +46,10 @@ export default function GlassCard({ title, description, data, memo, id, event, s
       >      
       削除
       </button>
+      <button
+       className={styles.edit_button}
+       onClick={handleEdit}
+       >編集する</button>
     </div>
     </div>
   );

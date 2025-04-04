@@ -26,10 +26,7 @@ export default function GlassCard({ title, description, data, memo, id, event, s
         window.alert("削除しました！")
   }
 
-  const handleEdit = async() => {
-    router.push(`/maneedit?id=${id}`);
-    
-  }
+
   return (
     <div className={styles.container}>
     <div className={styles.card}>
@@ -46,10 +43,6 @@ export default function GlassCard({ title, description, data, memo, id, event, s
       >      
       削除
       </button>
-      <button
-       className={styles.edit_button}
-       onClick={handleEdit}
-       >編集する</button>
     </div>
     </div>
   );
